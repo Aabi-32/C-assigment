@@ -1,6 +1,9 @@
 #include<stdio.h>
 
-void acceptStudent(int s, int m, int students[s][m]){
+// global variables
+int s;
+int m;
+void acceptStudent( int students[s][m]){
     for(int i=0; i<s; i++)
     {
       printf(" for Student: %d \n", i+1);
@@ -14,7 +17,7 @@ void acceptStudent(int s, int m, int students[s][m]){
 
 }
 
-void Print(int s, int m, int students[s][m],int totals[s], char grades[s])
+void Print( int students[s][m],int totals[s], char grades[s], int averages[s])
 
 {
     printf("=============================================================================== \n \n ");
@@ -32,12 +35,13 @@ void Print(int s, int m, int students[s][m],int totals[s], char grades[s])
        
       }
        printf("Student %d Total Marks is: %d  \n", i+1, totals[i]);
+       printf("Student %d Average Marks is: %d  \n", i+1, averages[i]);
        printf("Student %d Grade is: %c  \n", i+1, grades[i]);
 
     }
 }
 
-void CalTotal( int s, int m, int students[s][m], int totals[s])
+void CalTotal(  int students[s][m], int totals[s])
 {
        for(int i=0; i<s; i++)
     {
@@ -54,7 +58,7 @@ void CalTotal( int s, int m, int students[s][m], int totals[s])
 }
 
 
-void CalAverage( int s, int m,  int totals[s], int averages[s])
+void CalAverage(   int totals[s], int averages[s])
 {
        for(int i=0; i<s; i++)
       {
@@ -62,7 +66,7 @@ void CalAverage( int s, int m,  int totals[s], int averages[s])
       }
 }
 
-void findGrade(int s, int averages[s], char grades[s])
+void findGrade( int averages[s], char grades[s])
 {
     for (int i = 0; i < s; i++)
     { 
@@ -91,8 +95,7 @@ void findGrade(int s, int averages[s], char grades[s])
 
 int main()
 {
-    int s;
-    int m;
+   
     printf("how many students you want to Enter: ");
     scanf("%d", &s);
      printf("how many Marks you want to Enter for Every student: ");
@@ -104,11 +107,11 @@ int main()
    int averages[s];
 
 
-   acceptStudent(s,m,students);
-   CalTotal(s,m ,students,totals);
-   CalAverage(s,m,totals,averages);
-   findGrade(s,averages,grades);
-   Print(s,m,students,totals,grades);
+   acceptStudent(students);
+   CalTotal(students,totals);
+   CalAverage(totals,averages);
+   findGrade(averages,grades);
+   Print(students,totals,grades,averages);
   
 
 
