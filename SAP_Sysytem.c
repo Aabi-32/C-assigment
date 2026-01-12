@@ -58,15 +58,8 @@ void CalAverage( int s, int m,  int totals[s], int averages[s])
 {
        for(int i=0; i<s; i++)
       {
-        averages[i]= 0;
-    
-       for(int j=0; j<m; j++)
-      {
-            averages[i]= totals[i]/j;
-       
+        averages[i] = totals[i] / m;
       }
-  
-}
 }
 
 void findGrade(int s, int averages[s], char grades[s])
