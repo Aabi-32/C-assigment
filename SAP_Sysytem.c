@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+// this code is also availabe at my the github repo https://github.com/Aabi-32/C-assigment.git 
 // global variables
 int s;
 int m;
@@ -41,7 +41,7 @@ void Print( int students[s][m],int totals[s], char grades[s], int averages[s])
     }
 }
 
-void CalTotal(  int students[s][m], int totals[s])
+void CalTotal(  int std[s][m], int totals[s])
 {
        for(int i=0; i<s; i++)
     {
@@ -50,7 +50,7 @@ void CalTotal(  int students[s][m], int totals[s])
       for(int j=0; j<m; j++)
       {
 
-        totals[i] += students[i][j];
+        totals[i] += std[i][j];
        
       }
       
