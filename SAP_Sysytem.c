@@ -1,8 +1,11 @@
 #include<stdio.h>
 // this code is also availabe at my the github repo https://github.com/Aabi-32/C-assigment.git 
-// global variables
-int s;
-int m;
+
+
+// ----> global variables
+int s;  //---->>  for the number of students
+int m;  //----->> for the number of marks for every student
+
 void acceptStudent( int students[s][m]){
     for(int i=0; i<s; i++)
     {
