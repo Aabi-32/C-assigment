@@ -6,6 +6,40 @@
 int s;  //---->>  for the number of students
 int m;  //----->> for the number of marks for every student
 
+void acceptStudent( int students[s][m]);
+void Print( int students[s][m],float totals[s], char grades[s], float averages[s]);
+void CalTotal(  int std[s][m], float totals[s]);
+void CalAverage(   float totals[s], float averages[s]);
+void findGrade( float averages[s], char grades[s]);
+
+
+int main()
+{
+   
+    printf("how many students you want to Enter: ");
+    scanf("%d", &s);
+     printf("how many Marks you want to Enter for Every student: ");
+    scanf("%d", &m);
+    
+   int students[s][m];
+   float totals[s];
+   char grades[s];
+   float averages[s];
+
+
+   acceptStudent(students);
+   CalTotal(students,totals);
+   CalAverage(totals,averages);
+   findGrade(averages,grades);
+   Print(students,totals,grades,averages);
+  
+
+
+  
+    return 0;
+}
+
+// function to get the info 
 void acceptStudent( int students[s][m]){
     for(int i=0; i<s; i++)
     {
@@ -20,7 +54,8 @@ void acceptStudent( int students[s][m]){
 
 }
 
-void Print( int students[s][m],int totals[s], char grades[s], int averages[s])
+// function to print the info at the end
+void Print( int students[s][m],float totals[s], char grades[s], float averages[s])
 
 {
     printf("=============================================================================== \n \n ");
@@ -37,14 +72,14 @@ void Print( int students[s][m],int totals[s], char grades[s], int averages[s])
         printf("Subject: %d is -> %d \n", j+1 ,students[i][j]);
        
       }
-       printf("Student %d Total Marks is: %d  \n", i+1, totals[i]);
-       printf("Student %d Average Marks is: %d  \n", i+1, averages[i]);
+       printf("Student %d Total Marks is: %f  \n", i+1, totals[i]);
+       printf("Student %d Average Marks is: %f  \n", i+1, averages[i]);
        printf("Student %d Grade is: %c  \n", i+1, grades[i]);
 
     }
 }
-
-void CalTotal(  int std[s][m], int totals[s])
+// function to calculate the total of the marks 
+void CalTotal(  int std[s][m], float totals[s])
 {
        for(int i=0; i<s; i++)
     {
@@ -60,8 +95,8 @@ void CalTotal(  int std[s][m], int totals[s])
     }
 }
 
-
-void CalAverage(   int totals[s], int averages[s])
+// total to calculate the average of the student
+void CalAverage(  float totals[s], float averages[s])
 {
        for(int i=0; i<s; i++)
       {
@@ -69,7 +104,8 @@ void CalAverage(   int totals[s], int averages[s])
       }
 }
 
-void findGrade( int averages[s], char grades[s])
+// function to find the grade based on the average
+void findGrade( float averages[s], char grades[s])
 {
     for (int i = 0; i < s; i++)
     { 
@@ -94,30 +130,4 @@ void findGrade( int averages[s], char grades[s])
        
     }
     
-}
-
-int main()
-{
-   
-    printf("how many students you want to Enter: ");
-    scanf("%d", &s);
-     printf("how many Marks you want to Enter for Every student: ");
-    scanf("%d", &m);
-    
-   int students[s][m];
-   int totals[s];
-   char grades[s];
-   int averages[s];
-
-
-   acceptStudent(students);
-   CalTotal(students,totals);
-   CalAverage(totals,averages);
-   findGrade(averages,grades);
-   Print(students,totals,grades,averages);
-  
-
-
-  
-    return 0;
 }

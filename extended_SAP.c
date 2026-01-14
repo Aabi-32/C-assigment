@@ -4,7 +4,6 @@
 int s=3 ;  // number of students
 
 struct Student{
-
     int id;
     char name[20];
     int marks[6];
@@ -21,9 +20,9 @@ void  calTotal(struct Student st[]);
 void  calAverage(struct Student st[]);
 void  calGrade(struct Student st[]);
 void  findTopStudent(struct Student std[], int *topper);
-void display(struct  Student std[], int *topper);
+void  display(struct  Student std[], int *topper);
 
-int main()
+int   main()
 {
     int topper;
     struct Student student[s];
@@ -35,11 +34,7 @@ int main()
     findTopStudent(student, &topper);
     display(student, &topper);
 
-   
-
-
     return 0;
-
 }
 
 void  calTotal(struct Student st[])
@@ -135,7 +130,7 @@ void  findTopStudent(struct Student std[], int *topper)
     
    
 }
-void display(struct  Student std[], int *topper)
+void  display(struct  Student std[], int *topper)
 {
    
     printf("=============================================================================== \n \n ");
