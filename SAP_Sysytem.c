@@ -1,6 +1,6 @@
 #include<stdio.h>
 // this code is also availabe at my the github repo https://github.com/Aabi-32/C-assigment.git 
-
+//NB --> its only available in master branch.
 
 // ----> global variables
 int s;  //---->>  for the number of students
